@@ -32,7 +32,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     /* background-color: #8c999e; */
-    background-color: #8ea8a3;
+    /* background-color: #8ea8a3; */
+    background-color: white;
 }
 ol, ul {
 	list-style: none;
@@ -74,15 +75,6 @@ table {
     display: block;
 }
 
-@media only screen and (max-width: 800px) {
-    .container__blocks {
-        display: flex;
-        flex-flow: column wrap;
-    }
-    .container {
-        padding: 10px;
-    }
-}
 
 h1 {
     font-weight: 700;
@@ -142,4 +134,23 @@ a:hover {
     margin-top: 2em;
     margin-bottom: 1em;
     line-height: 30px;
+    font-size: larger;
+}
+
+@media only screen and (max-width: 800px) {
+    .container__blocks {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 8vw;
+    }
+}
+
+p.first {
+    margin-bottom: 3em;
+    text-align: justify;
 }
