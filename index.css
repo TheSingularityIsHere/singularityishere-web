@@ -79,6 +79,9 @@ table {
         display: flex;
         flex-flow: column wrap;
     }
+    .container {
+        padding: 10px;
+    }
 }
 
 h1 {
@@ -121,4 +124,22 @@ a {
 
 a:hover {
     font-style: italic;
+}
+
+.video-top {
+    /* height: 20%; */
+    /* overflow: hidden; */
+}
+
+.video-top video {
+    width: 100%;
+    height: auto;
+    /* display: block;
+    margin-top: -50%; */
+}
+
+.timeplace {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 30px;
 }
