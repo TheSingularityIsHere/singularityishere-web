@@ -78,14 +78,20 @@ table {
 
 h1 {
     font-weight: 700;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 20px;
+    text-align: center;
+    max-width: 100%;
+    white-space: nowrap;
 }
 
 h2 {
     font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 100%;
+    white-space: nowrap;
 }
 
 h3 {
@@ -119,19 +125,15 @@ a:hover {
 }
 
 .video-top {
-    /* height: 20%; */
-    /* overflow: hidden; */
+    margin-bottom: 2em;
 }
 
 .video-top video {
     width: 100%;
     height: auto;
-    /* display: block;
-    margin-top: -50%; */
 }
 
 .timeplace {
-    margin-top: 2em;
     margin-bottom: 1em;
     line-height: 30px;
     font-size: larger;
@@ -146,11 +148,17 @@ a:hover {
         padding: 10px;
     }
     h1 {
-        font-size: 8vw;
+        font-size: 5.3vw;
+    }
+    h2 {
+        font-size: 4.5vw;
+    }
+    h3 {
+        font-size: 3.5vw;
     }
 }
 
-p.first {
+p.last {
     margin-bottom: 3em;
     text-align: justify;
 }
