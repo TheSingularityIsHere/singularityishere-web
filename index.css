@@ -162,3 +162,7 @@ p.last {
     margin-bottom: 3em;
     text-align: justify;
 }
+
+#showexp1, #showmore {
+    font-size: larger;
+}
