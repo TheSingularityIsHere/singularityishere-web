@@ -219,6 +219,9 @@ for (const [showmore, more] of [
     e.preventDefault();
     document.querySelector(showmore).style.display = 'none';
     document.querySelector(more).style.display = 'block';
+    fetch('https://figur.li/l/?tag=' + showmore.substr(1));
   });
 }
+
+fetch('https://figur.li/l/?tag=loaded');
 </script>
