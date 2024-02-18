@@ -109,13 +109,6 @@ p {
     line-height: 20px;
 }
 
-img {
-    width: 100%;
-    position: absolute;
-    top: -80vw;
-    display: none;
-}
-
 a {
     color: black;
 }
@@ -128,7 +121,7 @@ a:hover {
     margin-bottom: 2em;
 }
 
-.video-top video {
+.video-top video, .video-top img {
     width: 100%;
     height: auto;
 }
@@ -163,6 +156,6 @@ p.last {
     text-align: justify;
 }
 
-#showexp1, #showmore {
+.morelink {
     font-size: larger;
 }
