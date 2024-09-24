@@ -47,7 +47,7 @@
   </p>
 
   <p>
-    <a href="#" id="showexp3" class="morelink">Experiment #3...</a>
+    <a href="#" data-show="exp3">Experiment #3...</a>
   </p>
     
   <div style="display:none" id="exp3">
@@ -67,7 +67,7 @@
   </div>
 
   <p>
-    <a href="#" id="showexp2" class="morelink">Experiment #2...</a>
+    <a href="#" data-show="exp2">Experiment #2...</a>
   </p>
 
   <div style="display:none" id="exp2">
@@ -113,7 +113,7 @@
   </div>
 
   <p>
-    <a href="#" id="showexp1" class="morelink">Experiment #1...</a>
+    <a href="#" data-show="exp1">Experiment #1...</a>
   </p>
 
   <div style="display:none" id="exp1">
@@ -148,10 +148,10 @@
   </div>
 
   <p>
-    <a href="#" id="showmore" class="morelink">About the Foundation...</a>
+    <a href="#" data-show="foundation">About the Foundation...</a>
   </p>
 
-  <div style="display:none" id="more">
+  <div style="display:none" id="foundation">
     <h2>About the Foundation</h2>
 
     <div class="video-top">
@@ -278,19 +278,14 @@
 
 
 <script>
-for (const [showmore, more] of [
-    ['#showexp3', '#exp3'],
-    ['#showexp2', '#exp2'],
-    ['#showexp1', '#exp1'],
-    ['#showmore', '#more'],
-]) {
-  document.querySelector(showmore).addEventListener('click', e => {
+[...document.querySelectorAll('[data-show]')].map(a => {
+  a.addEventListener('click', e => {
     e.preventDefault();
-    document.querySelector(showmore).style.display = 'none';
-    document.querySelector(more).style.display = 'block';
-    fetch('https://figur.li/l/?tag=' + showmore.substr(1));
+    a.parentElement.style.display = 'none';
+    document.getElementById(a.dataset.show).style.display = 'block';
+    fetch('https://figur.li/l/?tag=' + a.dataset.show);
   });
-}
+});
 
 fetch('https://figur.li/l/?tag=loaded');
 </script>
