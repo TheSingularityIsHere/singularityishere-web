@@ -101,6 +101,10 @@ h3 {
     line-height: 24px;
 }
 
+small {
+    font-size: 80%;
+}
+
 p {
     text-align: left;
     font-weight: 400;
