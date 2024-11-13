@@ -15,7 +15,7 @@
 
 <div class="container">
 
-  <h1>Experiment #5 – ‘AI at Work’</h1>
+  <h1 id="experiment5">Experiment #5 – ‘AI at Work’</h1>
 
   <div class="video-top">
     <img src="exp005_teaser.jpg" />
@@ -48,10 +48,10 @@
   </p>
 
   <p>
-    <a href="#" data-show="exp4">Experiment #4...</a>
+    <a href="#experiment4" data-show="experiment4">Experiment #4...</a>
   </p>
   
-  <div style="display:none" id="exp4">
+  <div style="display:none" id="experiment4">
   
     <h2>Experiment #4 – ‘Touring Test’</h2>
   
@@ -68,10 +68,10 @@
   </div>
 
   <p>
-    <a href="#" data-show="exp3">Experiment #3...</a>
+    <a href="#experiment3" data-show="experiment3">Experiment #3...</a>
   </p>
     
-  <div style="display:none" id="exp3">
+  <div style="display:none" id="experiment3">
   
     <h2>Experiment #3 – ‘Black Box’</h2>
 
@@ -88,10 +88,10 @@
   </div>
 
   <p>
-    <a href="#" data-show="exp2">Experiment #2...</a>
+    <a href="#experiment2" data-show="experiment2">Experiment #2...</a>
   </p>
 
-  <div style="display:none" id="exp2">
+  <div style="display:none" id="experiment2">
 
     <h2>Experiment #2 – ‘Feeling Machines’</h2>
 
@@ -134,10 +134,10 @@
   </div>
 
   <p>
-    <a href="#" data-show="exp1">Experiment #1...</a>
+    <a href="#experiment1" data-show="experiment1">Experiment #1...</a>
   </p>
 
-  <div style="display:none" id="exp1">
+  <div style="display:none" id="experiment1">
 
     <h2>Experiment #1 – ‘Welcoming Sentient AI’</h2>
 
@@ -169,11 +169,11 @@
   </div>
 
   <p>
-    <a href="#" data-show="foundation">About the Foundation...</a>
+    <a href="#foundation" data-show="foundation">About the Foundation...</a>
   </p>
 
   <div style="display:none" id="foundation">
-    <h2>About the Foundation</h2>
+    <h2 id="foundation">About the Foundation</h2>
 
     <div class="video-top">
       <video src="foundation_trailer.mp4" controls poster="foundation_trailer.jpg"></video>
@@ -301,14 +301,27 @@
 
 
 <script>
-[...document.querySelectorAll('[data-show]')].map(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    a.parentElement.style.display = 'none';
-    document.getElementById(a.dataset.show).style.display = 'block';
-    fetch('https://figur.li/l/?tag=' + a.dataset.show);
-  });
-});
+
+const els = [...document.querySelectorAll('[id]')];
+const ids = els.map(el => el.id);
+const links = els.map(el => document.querySelector(`[data-show="${el.id}"]`));
+
+function gohome() {
+  window.location.hash = `#${ids[0]}`;
+}
+
+function hashed() {
+  const tag = window.location.hash.substr(1);
+  const i = ids.indexOf(tag);
+  if (i === -1) return gohome();
+  links[i] && (links[i].style.display = 'none');
+  els[i] && (els[i].style.display = null);
+  fetch(`https://figur.li/l/?tag=${tag}`);
+}
+
+window.location.hash || gohome();
+window.addEventListener('hashchange', hashed);
+hashed();
 
 fetch('https://figur.li/l/?tag=loaded');
 </script>
