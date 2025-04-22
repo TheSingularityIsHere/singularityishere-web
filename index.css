@@ -148,6 +148,7 @@ a:hover {
     }
     h1 {
         font-size: 5.3vw;
+        white-space: wrap;
     }
     h2 {
         font-size: 4.5vw;
