@@ -140,6 +140,11 @@ a:hover {
 
 .followus {
     font-size: larger;
+    line-height: 1.5em;
+    p {
+        font-size: larger;
+        line-height: 1.5em;
+    }
     margin-bottom: 2em;
     ul {
         list-style: square;
