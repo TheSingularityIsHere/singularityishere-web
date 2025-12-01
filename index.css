@@ -21,6 +21,13 @@
     display: block;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto 18px auto;
+    max-width: 200px;
+    height: auto;
+}
+
 
 h1 {
     font-weight: 700;
